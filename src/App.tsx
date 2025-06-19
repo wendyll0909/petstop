@@ -20,31 +20,31 @@ interface Staff {
 const products: Product[] = [
   {
     id: 1,
-    name: "Premium Aquarium Filter",
-    price: 2450,
-    image: "https://images.pexels.com/photos/1456706/pexels-photo-1456706.jpeg?auto=compress&cs=tinysrgb&w=400",
-    description: "High-performance filtration system for crystal clear water. Perfect for both freshwater and saltwater aquariums."
+    name: "KOI KING OVERLOAD",
+    price: 123,
+    image: "/koi king.jpg",
+    description: "GROWTH 454g small & medium ₱150\n1kg small and medium ₱250\nEXCEL 454g small & medium ₱175\nCOLOR 454g small ₱199\nWHOLESALE is available minimum 5ctn each."
   },
   {
     id: 2,
-    name: "Tropical Fish Food",
-    price: 350,
-    image: "https://images.pexels.com/photos/667443/pexels-photo-667443.jpeg?auto=compress&cs=tinysrgb&w=400",
-    description: "Nutritious flakes specially formulated for tropical fish. Rich in vitamins and minerals for optimal health."
+    name: "Porpoise",
+    price: 9999,
+    image: "/porpoise.jpg",
+    description: "Porpoise 5kg --- 40% Protein koi keeper recommended 5kg Growth M or L--- ₱1,200 5kg MIX (growth + color)---- ₱1,300 For wholesale kindly message us directly!."
   },
   {
     id: 3,
-    name: "LED Aquarium Light",
-    price: 1800,
-    image: "https://images.pexels.com/photos/1123982/pexels-photo-1123982.jpeg?auto=compress&cs=tinysrgb&w=400",
+    name: "Magic Color",
+    price: 11111,
+    image: "/magicolor.jpg",
     description: "Energy-efficient LED lighting system with adjustable color spectrum for plant growth and fish display."
   },
   {
     id: 4,
-    name: "Goldfish Starter Kit",
+    name: "JAPANESE MATTING",
     price: 3200,
-    image: "https://images.pexels.com/photos/33041/antique-animal-countryside-decoration.jpg?auto=compress&cs=tinysrgb&w=400",
-    description: "Complete starter kit including tank, filter, food, and decorations. Everything you need to get started."
+    image: "/japmat.jpg",
+    description: "JAPANESE MATTING."
   },
   {
     id: 5,
@@ -65,38 +65,38 @@ const products: Product[] = [
 const staff: Staff[] = [
   {
     id: 1,
-    name: "Maria Santos",
+    name: "Madam Suzette",
     position: "Store Manager",
-    image: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=300",
-    experience: "8 years in aquatic retail management"
+    image: "/sus.jpg",
+    experience: "4 years in Pet Stop store management"
   },
   {
     id: 2,
-    name: "John Dela Cruz",
+    name: "Wendyll",
     position: "Store Attendant",
-    image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=300",
-    experience: "3 years specializing in freshwater fish"
+    image: "/en.jpg",
+    experience: "1 week employee"
   },
   {
     id: 3,
-    name: "Ana Rodriguez",
+    name: "Ken",
     position: "Store Attendant",
-    image: "https://images.pexels.com/photos/1181414/pexels-photo-1181414.jpeg?auto=compress&cs=tinysrgb&w=300",
-    experience: "2 years expert in aquatic plants"
+    image: "/john.jpg",
+    experience: "1 week employee"
   },
   {
     id: 4,
-    name: "Carlos Reyes",
+    name: "Erika",
     position: "Store Attendant",
-    image: "https://images.pexels.com/photos/1181292/pexels-photo-1181292.jpeg?auto=compress&cs=tinysrgb&w=300",
-    experience: "4 years in aquarium equipment"
+    image: "/tt.jpg",
+    experience: "5 months employee"
   },
   {
     id: 5,
-    name: "Lisa Garcia",
+    name: "Regine",
     position: "Store Attendant",
-    image: "https://images.pexels.com/photos/1181290/pexels-photo-1181290.jpeg?auto=compress&cs=tinysrgb&w=300",
-    experience: "1 year specializing in fish nutrition"
+    image: "\haha.png",
+    experience: "1 months employee"
   }
 ];
 
@@ -104,9 +104,11 @@ type ModalType = 'products' | 'staff' | 'about' | 'contact' | 'special' | null;
 
 function App() {
   const [activeModal, setActiveModal] = useState<ModalType>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const openModal = (modalType: ModalType) => {
     setActiveModal(modalType);
+    setIsMobileMenuOpen(false); // Close mobile menu when opening a modal
   };
 
   const closeModal = () => {
@@ -115,6 +117,11 @@ function App() {
 
   const goHome = () => {
     setActiveModal(null);
+    setIsMobileMenuOpen(false); // Close mobile menu when going home
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -124,8 +131,8 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
-              <Fish className="h-8 w-8 text-orange-500" />
-              <h1 className="text-2xl font-bold text-gray-800">AquaLife Pet Shop</h1>
+              <img src="/petstop.jpg" alt="Pet Stop Logo" className="h-12 w-12" />
+              <h1 className="text-2xl font-bold text-gray-800">Pet Stop</h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
               <button
@@ -170,16 +177,72 @@ function App() {
                 ipot ni nek nek
               </button>
             </nav>
-            
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <button className="text-gray-600 hover:text-orange-500">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+              <button
+                onClick={toggleMobileMenu}
+                className="text-gray-600 hover:text-orange-500"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <nav className="md:hidden bg-white border-t border-gray-200">
+              <div className="flex flex-col space-y-2 py-4 px-4">
+                <button
+                  onClick={goHome}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-200"
+                >
+                  <Home className="h-5 w-5" />
+                  <span>Home</span>
+                </button>
+                <button
+                  onClick={() => openModal('contact')}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-200"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>Contact Us</span>
+                </button>
+                <button
+                  onClick={() => openModal('products')}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-200"
+                >
+                  <ShoppingBag className="h-5 w-5" />
+                  <span>Products</span>
+                </button>
+                <button
+                  onClick={() => openModal('staff')}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-200"
+                >
+                  <Users className="h-5 w-5" />
+                  <span>Staff</span>
+                </button>
+                <button
+                  onClick={() => openModal('about')}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-200"
+                >
+                  <Info className="h-5 w-5" />
+                  <span>About Us</span>
+                </button>
+                <button
+                  onClick={() => openModal('special')}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-all duration-200"
+                >
+                  <Fish className="h-5 w-5" />
+                  <span>ipot ni nek nek</span>
+                </button>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
@@ -188,13 +251,13 @@ function App() {
         {/* Hero Section */}
         <section className="text-center mb-12">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-            Welcome to <span className="text-orange-500">AquaLife</span>
+            Welcome to <span className="text-orange-500">PetStop</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Your premier destination for aquatic pets, supplies, and expert care. 
             Discover the beauty of underwater life with our premium products.
           </p>
-        </section>
+        </section> 
 
         {/* Featured Items Section */}
         <section className="mb-12">
@@ -245,7 +308,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-xl font-bold mb-4 text-orange-500">AquaLife Pet Shop</h4>
+              <h4 className="text-xl font-bold mb-4 text-orange-500">Pet Stop</h4>
               <p className="text-gray-300">
                 Your trusted partner for all aquatic needs. Quality products, expert advice, and exceptional service.
               </p>
@@ -255,15 +318,15 @@ function App() {
               <div className="space-y-2 text-gray-300">
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
-                  <span>123 Aquatic Street, Fish City</span>
+                  <span>Obrero, Davao City</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
-                  <span>+63 123 456 7890</span>
+                  <span>0917 304 0055</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4" />
-                  <span>info@aqualifepets.com</span>
+                  <span>petstop@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -272,17 +335,21 @@ function App() {
               <div className="space-y-2 text-gray-300">
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />
-                  <span>Mon - Fri: 9AM - 8PM</span>
+                  <span>Mon - Fri: 8:30AM - 5:30PM</span>
+                </div>
+                 <div className="flex items-center space-x-2">
+                  <Clock className="h-4 w-4" />
+                  <span>Sat: 9AM - 5:30PM</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />
-                  <span>Sat - Sun: 10AM - 6PM</span>
+                  <span>Sun: Closed</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400">
-            <p>&copy; 2024 AquaLife Pet Shop. Created with care for aquatic enthusiasts.</p>
+            <p>&copy; 2025 Pet Stop. Created with care for aquatic enthusiasts.</p>
           </div>
         </div>
       </footer>
@@ -379,7 +446,7 @@ function App() {
                   <div className="bg-gray-50 rounded-lg p-6 text-center">
                     <h4 className="text-xl font-bold text-gray-800 mb-4">Created By</h4>
                     <div className="space-y-2">
-                      <p className="text-lg font-semibold text-orange-500">Your Name Here</p>
+                      <p className="text-lg font-semibold text-orange-500">Wendyll Erosido</p>
                       <p className="text-gray-600">Web Developer & Aquatic Enthusiast</p>
                       <p className="text-gray-600">Email: yourname@example.com</p>
                       <p className="text-gray-600">Phone: +63 123 456 7890</p>
@@ -396,20 +463,20 @@ function App() {
                     <div className="space-y-4">
                       <div className="flex items-center space-x-3">
                         <Phone className="h-5 w-5 text-orange-500" />
-                        <span className="text-gray-700">+63 123 456 7890</span>
+                        <span className="text-gray-700">0917 304 0055</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <Mail className="h-5 w-5 text-orange-500" />
-                        <span className="text-gray-700">info@aqualifepets.com</span>
+                        <span className="text-gray-700">petstop@gmail.com</span>
                       </div>
                       <div className="flex items-center space-x-3">
                         <MapPin className="h-5 w-5 text-orange-500" />
-                        <span className="text-gray-700">123 Aquatic Street, Fish City</span>
+                        <span className="text-gray-700">Obrero, Davao City</span>
                       </div>
                     </div>
                   </div>
                   
-                  <form className="space-y-4">
+                  <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                       <input 
@@ -435,22 +502,21 @@ function App() {
                       ></textarea>
                     </div>
                     <button 
-                      type="submit"
                       className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200"
                     >
                       Send Message
                     </button>
-                  </form>
+                  </div>
                 </div>
               )}
 
               {/* Special Modal */}
               {activeModal === 'special' && (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-8">Special Surprise!</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-8">Ipot Ni NEK NEK</h3>
                   <div className="max-w-md mx-auto">
                     <img 
-                      src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      src="\ipot.jpg" 
                       alt="Cat poop"
                       className="w-full rounded-lg shadow-lg"
                     />
