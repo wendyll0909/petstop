@@ -22,28 +22,28 @@ const products: Product[] = [
     id: 1,
     name: "KOI KING OVERLOAD",
     price: 123,
-    image: "/public/images/koi king.jpg",
+    image: "/images/koi king.jpg",
     description: "GROWTH 454g small & medium ₱150\n1kg small and medium ₱250\nEXCEL 454g small & medium ₱175\nCOLOR 454g small ₱199\nWHOLESALE is available minimum 5ctn each."
   },
   {
     id: 2,
     name: "Porpoise",
     price: 9999,
-    image: "/public/images/porpoise.jpg",
+    image: "/images/porpoise.jpg",
     description: "Porpoise 5kg --- 40% Protein koi keeper recommended 5kg Growth M or L--- ₱1,200 5kg MIX (growth + color)---- ₱1,300 For wholesale kindly message us directly!."
   },
   {
     id: 3,
     name: "Magic Color",
     price: 11111,
-    image: "/public/images/magicolor.jpg",
+    image: "/images/magicolor.jpg",
     description: "Energy-efficient LED lighting system with adjustable color spectrum for plant growth and fish display."
   },
   {
     id: 4,
     name: "JAPANESE MATTING",
     price: 3200,
-    image: "/public/images/japmat.jpg",
+    image: "/images/japmat.jpg",
     description: "JAPANESE MATTING."
   },
   {
@@ -67,35 +67,35 @@ const staff: Staff[] = [
     id: 1,
     name: "Madam Suzette",
     position: "Store Manager",
-    image: "/public/images/sus.jpg",
+    image: "/images/sus.jpg",
     experience: "4 years in Pet Stop store management"
   },
   {
     id: 2,
     name: "Wendyll",
     position: "Store Attendant",
-    image: "/public/images/en.jpg",
+    image: "/images/en.jpg",
     experience: "1 week employee"
   },
   {
     id: 3,
     name: "Ken",
     position: "Store Attendant",
-    image: "/public/images/john.jpg",
+    image: "/images/john.jpg",
     experience: "1 week employee"
   },
   {
     id: 4,
     name: "Erika",
     position: "Store Attendant",
-    image: "/public/images/tt.jpg",
+    image: "/images/tt.jpg",
     experience: "5 months employee"
   },
   {
     id: 5,
     name: "Regine",
     position: "Store Attendant",
-    image: "/public/images/haha.png",
+    image: "/images/haha.png",
     experience: "1 months employee"
   }
 ];
@@ -131,7 +131,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
-              <img src="/public/images/petstop.jpg" alt="Pet Stop Logo" className="h-12 w-12" />
+              <img src="/images/petstop.jpg" alt="Pet Stop Logo" className="h-12 w-12" />
               <h1 className="text-2xl font-bold text-gray-800">Pet Stop</h1>
             </div>
             <nav className="hidden md:flex items-center space-x-6">
@@ -516,7 +516,7 @@ function App() {
                   <h3 className="text-2xl font-bold text-gray-800 mb-8">Ipot Ni NEK NEK</h3>
                   <div className="max-w-md mx-auto">
                     <img 
-                      src="/public/images/ipot.jpg" 
+                      src="/images/ipot.jpg" 
                       alt="Cat poop"
                       className="w-full rounded-lg shadow-lg"
                     />
